@@ -1,0 +1,29 @@
+	<center>
+		<div class="input_div_message_page">
+			<label>Send:</label>
+			<input type="text" id="msg" class="form-control" placeholder="Message">
+			<button onclick="send()" class="btn btn-success">Send</button>
+		</div>
+	</center>
+
+	  firebase.initializeApp(firebaseConfig);
+  user_name=localStorage.getItem("user_name");
+  Room_name=localStorage.getItem("Room_name");
+  document.getElementById("user_name").innerHTML="Welcome"+ user_name + "!";
+
+
+function getData() {firebase.database().ref("/").on('value', function(snapshot) {document.getElementById("output").innerHTML = "";snapshot.forEach(function(childSnapshot) {childKey  = childSnapshot.key;
+      message_data = childKey;
+      firebase_message_id = childData;
+      console.log(message_data);
+      console.log(firebase_message_id);
+      name = message_data ['name'];
+      message = ['message'];
+      message_data = ['like'];
+      name_with_tag = "<h4>"+Name+" <img class='user_tick' src='tick.png'></h4>";
+      message_with_tag = "<h4 class='message_h4'>"+message+"</h4>";
+      like_button= "<button class='btn btn_waring' id="firebase_message_id"value="+like"onclick='updateLike(this.id)'>"
+}
+
+
+
